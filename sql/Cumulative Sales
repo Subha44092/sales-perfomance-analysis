@@ -1,0 +1,6 @@
+SQL Query 3: Cumulative Sales
+SELECT
+    date,
+    sales_amount,
+    SUM(sales_amount) OVER (ORDER BY date) AS cumulative_sales
+FROM sales_data;
