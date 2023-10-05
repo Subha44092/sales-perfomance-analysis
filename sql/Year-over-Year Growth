@@ -1,0 +1,12 @@
+#SQL Query 2: Year-over-Year Growth
+SELECT
+    date,
+    sales_amount,
+    sales_amount - LAG(sales_amount) OVER (ORDER BY date) AS year_over_year_growth
+FROM sales_data;
+SQL Query 3: Cumulative Sales
+SELECT
+    date,
+    sales_amount,
+    SUM(sales_amount) OVER (ORDER BY date) AS cumulative_sales
+FROM sales_data;
